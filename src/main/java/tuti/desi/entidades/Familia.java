@@ -6,17 +6,31 @@ import java.util.Date;
 @Entity
 public class Familia {
   
-    @Id
+   @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int nroFamilia;
     private String nombre;
     private Date fechaRegistro;
+    private Boolean Deshabilitado;
 
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "nro_familia_fk", referencedColumnName = "nroFamilia")
     private List<Asistido> integrantesFamiliaAsistida;
 
+    
+    
+  
+	public Familia(int nroFamilia, String nombre, Date fechaRegistro, Boolean deshabilitado,
+			List<Asistido> integrantesFamiliaAsistida) {
+		super();
+		this.nroFamilia = nroFamilia;
+		this.nombre = nombre;
+		this.fechaRegistro = fechaRegistro;
+		Deshabilitado = deshabilitado;
+		this.integrantesFamiliaAsistida = integrantesFamiliaAsistida;
+	}
+    
     public int getNroFamilia() {
         return nroFamilia;
     }
@@ -35,6 +49,14 @@ public class Familia {
     public void setFechaRegistro(Date fechaRegistro) {
         this.fechaRegistro = fechaRegistro;
     }
+	public Boolean getDeshabilitado() {
+		return Deshabilitado;
+	}
+	public void setDeshabilitado(Boolean deshabilitado) {
+		Deshabilitado = deshabilitado;
+	}
+	
+	
 
     
 
