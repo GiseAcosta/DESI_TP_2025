@@ -12,12 +12,16 @@ import tuti.desi.entidades.Familia;
 public class FamiliaServiceImpl implements FamiliaService{
 
 	@Autowired
-	private FamiliaRepositorio repositorio;
+	private FamiliaRepositorio familiaRepositorio;
 	
 	@Override
 	public List<Familia> listarFamilia() {
 		// TODO Auto-generated method stub
-		return repositorio.findAll();
+		return familiaRepositorio.findAll();
 	}
 
+	@Override
+	public void SalvarFamilia(Familia familia) {
+		familiaRepositorio.save(familia);
+	}
 }

@@ -8,26 +8,30 @@ public abstract class Persona {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
-    private int dni;
-    private String domicilio;
-    private String nombre;
-    private String apellido;
-    private Date fechaNacimiento;
-    private String ocupacion;
+	private Integer id;
+    
+	private Integer dni;
+    
+	private String domicilio;
+    
+	private String nombre;
+    
+	private String apellido;
+    
+	private Date fechaNacimiento;
+    
+	private String ocupacion;
 
-
-
-    public int getId() {
+    public Integer getId() {
         return id;
     }
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
-    public int getDni() {
+    public Integer getDni() {
         return dni;
     }
-    public void setDni(int dni) {
+    public void setDni(Integer dni) {
         this.dni = dni;
     }
     public String getDomicilio() {
@@ -61,5 +65,5 @@ public abstract class Persona {
         this.ocupacion = ocupacion;
     }
 
-
+    
 }

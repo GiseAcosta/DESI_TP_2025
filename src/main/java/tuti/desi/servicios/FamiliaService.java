@@ -6,5 +6,8 @@ import tuti.desi.entidades.Familia;
 
 public interface FamiliaService {
 	
-	public List<Familia> listarFamilia();
+	List<Familia> listarFamilia();
+	
+	//Mensaje cambio void por string
+	void SalvarFamilia(Familia familia);
 }

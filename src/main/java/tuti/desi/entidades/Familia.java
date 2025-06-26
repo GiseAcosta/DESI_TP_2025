@@ -6,7 +6,7 @@ import java.util.Date;
 @Entity
 public class Familia {
   
-   @Id
+  	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer nroFamilia;
    
@@ -16,11 +16,8 @@ public class Familia {
     
     private Boolean deshabilitado;
 
-
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    
     @JoinColumn(name = "nro_familia_fk", referencedColumnName = "nroFamilia")
-    
     private List<Asistido> integrantesFamiliaAsistida;
 
 	public int getNroFamilia() {
