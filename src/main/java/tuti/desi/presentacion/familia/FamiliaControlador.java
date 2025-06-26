@@ -15,10 +15,13 @@ public class FamiliaControlador {
 	@Autowired
 	private FamiliaService servicio;
 	
-	@GetMapping("/familia/Listar")
-	public String listarFamilia(Model modelo) {
+	@GetMapping("/familiaListar")
+	public String ListarFamilias(Model modelo) {
+		
 		modelo.addAttribute("familia", servicio.listarFamilia());
+		
 		return "familiaListar";
+
 	}
 	
 }

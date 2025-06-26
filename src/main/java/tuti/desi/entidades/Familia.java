@@ -8,30 +8,22 @@ public class Familia {
   
    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int nroFamilia;
+    private Integer nroFamilia;
+   
     private String nombre;
+    
     private Date fechaRegistro;
-    private Boolean Deshabilitado;
+    
+    private Boolean deshabilitado;
 
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    
     @JoinColumn(name = "nro_familia_fk", referencedColumnName = "nroFamilia")
+    
     private List<Asistido> integrantesFamiliaAsistida;
 
-    
-    
-  
-	public Familia(int nroFamilia, String nombre, Date fechaRegistro, Boolean deshabilitado,
-			List<Asistido> integrantesFamiliaAsistida) {
-		super();
-		this.nroFamilia = nroFamilia;
-		this.nombre = nombre;
-		this.fechaRegistro = fechaRegistro;
-		Deshabilitado = deshabilitado;
-		this.integrantesFamiliaAsistida = integrantesFamiliaAsistida;
-	}
-    
-    public int getNroFamilia() {
+	public int getNroFamilia() {
         return nroFamilia;
     }
     public void setNroFamilia(int nroFamilia) {
@@ -50,10 +42,10 @@ public class Familia {
         this.fechaRegistro = fechaRegistro;
     }
 	public Boolean getDeshabilitado() {
-		return Deshabilitado;
+		return deshabilitado;
 	}
-	public void setDeshabilitado(Boolean deshabilitado) {
-		Deshabilitado = deshabilitado;
+	public void setDeshabilitado(Boolean estaDeshabilitad) {
+		deshabilitado = estaDeshabilitad;
 	}
 	
 	
