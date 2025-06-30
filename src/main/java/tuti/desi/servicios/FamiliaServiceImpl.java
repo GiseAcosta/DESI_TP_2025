@@ -1,6 +1,7 @@
 package tuti.desi.servicios;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,12 +17,26 @@ public class FamiliaServiceImpl implements FamiliaService{
 	
 	@Override
 	public List<Familia> listarFamilia() {
-		// TODO Auto-generated method stub
-		return familiaRepositorio.findAll();
+		return familiaRepositorio.findByDeshabilitadoFalse();
 	}
 
 	@Override
-	public void SalvarFamilia(Familia familia) {
+	public Optional<Familia> buscarPorId(Integer id) {
+		return familiaRepositorio.findById(id);
+    }
+	
+	@Override
+	public void salvarFamilia(Familia familia) {
 		familiaRepositorio.save(familia);
 	}
+	
+	@Override
+	public void eliminar(Integer id) {
+		familiaRepositorio.findById(id).ifPresent(familia ->{
+			familia.setDeshabilitado(true);
+			familiaRepositorio.save(familia);
+		});
+	}
+	
+	
 }

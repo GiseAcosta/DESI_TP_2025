@@ -21,7 +21,9 @@ public abstract class Persona {
 	private Date fechaNacimiento;
     
 	private String ocupacion;
-
+	
+	private Boolean deshabilitado;
+    
     public Integer getId() {
         return id;
     }
@@ -64,6 +66,12 @@ public abstract class Persona {
     public void setOcupacion(String ocupacion) {
         this.ocupacion = ocupacion;
     }
+	public Boolean getDeshabilitado() {
+		return deshabilitado;
+	}
+	public void setDeshabilitado(Boolean deshabilitado) {
+		this.deshabilitado = deshabilitado;
+	}
 
     
 }

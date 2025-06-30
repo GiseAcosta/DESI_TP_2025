@@ -4,5 +4,9 @@ import tuti.desi.entidades.Asistido;
 
 public interface AsistidoService {
 
-	String SalvarAsistido (Asistido asistido); 
+	String SalvarAsistido (Asistido asistido);
+	
+	Asistido buscarPorDni(Integer dni);
+	
+	void eliminar(Integer id);
 }

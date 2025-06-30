@@ -1,8 +1,10 @@
 package tuti.desi.entidades;
 import jakarta.persistence.*;
 import java.util.List;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
+//GAcosta - Representa mi tabla Familia en la BD 
 @Entity
 public class Familia {
   
@@ -14,7 +16,7 @@ public class Familia {
     
     private Date fechaRegistro;
     
-    private Boolean deshabilitado;
+    private Boolean deshabilitado = false;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "nro_familia_fk", referencedColumnName = "nroFamilia")
@@ -45,7 +47,10 @@ public class Familia {
 		deshabilitado = estaDeshabilitad;
 	}
 	
-	
+	public String getFechaRegistroToString() {
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+		return sdf.format(fechaRegistro);
+	}
 
     
 

@@ -1,32 +1,20 @@
 package tuti.desi.entidades;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import jakarta.persistence.*;  
 
+
+//GAcosta - Representa mi tabla Asistido en la BD 
 @Entity
 public class Asistido  extends Persona {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) //Atributo id autoincremental
-    private Integer id;
-    
     @Column(name = "fecha_registro")
     private Date fechaRegistro;
-    
+        
     @ManyToOne
     @JoinColumn(name = "familia_id") 
-    private Familia familia;
-
-    @OneToOne
-    @JoinColumn(name = "persona_id")
-    private Persona persona;
+    private Familia familia;  
     
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
 
 	public Date getFechaRegistro() {
 		return fechaRegistro;
@@ -35,7 +23,7 @@ public class Asistido  extends Persona {
 	public void setFechaRegistro(Date fechaRegistro) {
 		this.fechaRegistro = fechaRegistro;
 	}
-
+	
 	public Familia getFamilia() {
 		return familia;
 	}
@@ -44,14 +32,9 @@ public class Asistido  extends Persona {
 		this.familia = familia;
 	}
 
-	public Persona getPersona() {
-		return persona;
+	public String getFechaRegistroToString() {
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+		return sdf.format(fechaRegistro);
+		
 	}
-
-	public void setPersona(Persona persona) {
-		this.persona = persona;
-	}
-
-   
-
 }

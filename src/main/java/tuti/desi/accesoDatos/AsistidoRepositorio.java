@@ -8,4 +8,5 @@ import tuti.desi.entidades.Asistido;
 @Repository 
 public interface AsistidoRepositorio extends JpaRepository<Asistido, Integer> {
 
+	Asistido findByDni(Integer dni);
 }
