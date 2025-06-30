@@ -25,7 +25,7 @@ public class Familia {
 	public int getNroFamilia() {
         return nroFamilia;
     }
-    public void setNroFamilia(int nroFamilia) {
+    public void setNroFamilia(Integer nroFamilia) {
         this.nroFamilia = nroFamilia;
     }
     public String getNombre() {
@@ -50,6 +50,12 @@ public class Familia {
 	public String getFechaRegistroToString() {
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 		return sdf.format(fechaRegistro);
+	}
+	public List<Asistido> getIntegrantesFamiliaAsistida() {
+		return integrantesFamiliaAsistida;
+	}
+	public void setIntegrantesFamiliaAsistida(List<Asistido> integrantesFamiliaAsistida) {
+		this.integrantesFamiliaAsistida = integrantesFamiliaAsistida;
 	}
 
     
