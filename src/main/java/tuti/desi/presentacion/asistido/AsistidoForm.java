@@ -6,7 +6,7 @@ import org.antlr.v4.runtime.misc.NotNull;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import jakarta.validation.constraints.Size;
-
+//Comentario
 public class AsistidoForm {
 
 	@NotNull
