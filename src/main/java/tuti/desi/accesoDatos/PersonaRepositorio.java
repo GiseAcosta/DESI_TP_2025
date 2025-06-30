@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import tuti.desi.entidades.Persona;
 
 @Repository
-public interface PersonaRespositorio extends JpaRepository<Persona, Integer> {
+public interface PersonaRepositorio extends JpaRepository<Persona, Integer> {
 
 }

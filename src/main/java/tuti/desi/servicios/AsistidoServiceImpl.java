@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import tuti.desi.accesoDatos.AsistidoRepositorio;
-import tuti.desi.accesoDatos.PersonaRespositorio;
+import tuti.desi.accesoDatos.PersonaRepositorio;
 import tuti.desi.entidades.Asistido;
 
 @Service
@@ -13,7 +13,7 @@ public class AsistidoServiceImpl implements AsistidoService {
     @Autowired
 	private AsistidoRepositorio asistidoRepositorio;
 
-    AsistidoServiceImpl(PersonaRespositorio personaRespositorio) {
+    AsistidoServiceImpl(PersonaRepositorio personaRespositorio) {
     }
 	
 	@Override
