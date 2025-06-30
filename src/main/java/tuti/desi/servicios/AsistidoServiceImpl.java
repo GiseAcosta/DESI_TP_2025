@@ -18,7 +18,7 @@ public class AsistidoServiceImpl implements AsistidoService {
 	
 	@Override
 	public String SalvarAsistido (Asistido asistido) {
-		Asistido asistidoPersona = asistidoRepositorio.buscarPorDni(asistido.getDni());
+		Asistido asistidoPersona = asistidoRepositorio.findByDni(asistido.getDni());
 		    if (asistidoPersona == null) {
 		        asistidoRepositorio.save(asistido);
 		        return "Se guardó correctamente";
@@ -29,8 +29,8 @@ public class AsistidoServiceImpl implements AsistidoService {
 	}
 
 	@Override
-	public Asistido buscarPorDni(Integer dni) {
-		return asistidoRepositorio.buscarPorDni(dni);
+	public Asistido findByDni(Integer dni) {
+		return asistidoRepositorio.findByDni(dni);
 	}
 	
 	@Override

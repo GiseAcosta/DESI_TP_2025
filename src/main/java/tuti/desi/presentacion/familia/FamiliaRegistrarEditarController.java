@@ -64,7 +64,7 @@ public class FamiliaRegistrarEditarController {
 	
 	@GetMapping("/deshabilitar/{id}")
 	public String eliminar(@PathVariable("id") Integer id) {
-		servicio.eliminar(id);
+		servicioFamilia.eliminar(id);
 		return "redirect:/familia/buscar";
 	}
 }

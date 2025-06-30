@@ -6,7 +6,7 @@ public interface AsistidoService {
 
 	String SalvarAsistido (Asistido asistido);
 	
-	Asistido buscarPorDni(Integer dni);
+	Asistido findByDni(Integer dni);
 	
 	void eliminar(Integer id);
 }

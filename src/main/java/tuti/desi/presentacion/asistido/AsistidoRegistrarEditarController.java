@@ -50,7 +50,7 @@ public class AsistidoRegistrarEditarController {
 			return "asistido/formulario";
 		}
 		
-		Asistido existePersona = asistidoServicio.buscarPorDni(formAsistido.getDni());
+		Asistido existePersona = asistidoServicio.findByDni(formAsistido.getDni());
 		if (existePersona != null) {
 			modelo.addAttribute("error", "Ya existe un asistido con ese DNI");
             return "asistido/formulario";
